@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner's End of Term Report</title>
+    <link rel="stylesheet" href="report_card.css">
+</head>
+<body>
+    <div class="report-card">
+        <header class="header">
+            <div class="header-left">
+                <img src="{{school_logo}}" alt="School Logo" class="logo">
+            </div>
+            <div class="header-center">
+                <h1>{{school_name}}</h1>
+                <h3>"{{school_motto}}"</h3>
+                <p>{{school_address}} | {{school_contact}} | {{school_email}}</p>
+                <h2>LEARNER'S END OF TERM REPORT</h2>
+            </div>
+            <div class="header-right">
+                <img src="{{student_photo}}" alt="Student Photo" class="student-photo">
+            </div>
+        </header>
+
+        <section class="student-bio">
+            <table>
+                <tr>
+                    <td><strong>Name:</strong> {{student_name}}</td>
+                    <td><strong>LIN:</strong> {{lin_number}}</td>
+                    <td><strong>Class:</strong> {{class_name}}</td>
+                    <td><strong>House:</strong> {{house_name}}</td>
+                    <td><strong>Term/Year:</strong> {{term_id}}</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="academic-results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SUBJECT</th>
+                        <th>CA SCORE (Max 20%)</th>
+                        <th>EXAM SCORE (Max 80%)</th>
+                        <th>TOTAL % (Max 100%)</th>
+                        <th>ACHIEVEMENT LEVEL (Max 3.0)</th>
+                        <th>DESCRIPTOR</th>
+                        <th>TEACHER</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each subjects}}
+                    <tr>
+                        <td>{{subject_name}}</td>
+                        <td>{{ca_mark_20}}</td>
+                        <td>{{exam_mark_80}}</td>
+                        <td>{{total_mark_100}}</td>
+                        <td>{{final_score_3}}</td>
+                        <td>{{achievement_descriptor}}</td>
+                        <td>{{teacher_name}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="grading-key">
+            <h3>Achievement Level Key</h3>
+            <p><strong>3 (Outstanding):</strong> Outstanding application of knowledge and skills.</p>
+            <p><strong>2 (Moderate):</strong> Adequate level of competency.</p>
+            <p><strong>1 (Basic):</strong> Limited or low level of competency.</p>
+        </section>
+
+        <section class="remarks-signatures">
+            <div class="comments">
+                <p><strong>Class Teacher's Comment:</strong> {{class_teacher_comment}}</p>
+                <p><strong>Head Teacher's Comment:</strong> {{head_teacher_comment}}</p>
+            </div>
+            <div class="signatures">
+                <div class="signature-line">
+                    <p>_________________________</p>
+                    <p>Class Teacher</p>
+                </div>
+                <div class="signature-line">
+                    <p>_________________________</p>
+                    <p>Head Teacher</p>
+                </div>
+            </div>
+            <div class="next-term">
+                <p><strong>Next Term Begins:</strong> {{next_term_date}}</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
